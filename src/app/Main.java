@@ -9,22 +9,38 @@ public class Main {
         Corrector corrector = new Corrector();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the number of words:");
-        int count = scanner.nextInt();
-        scanner.nextLine();
+        String userInput;
 
-        String[] userWords = new String[count];
-        System.out.println("Enter " + count + " words:");
+        while (true) {
+            System.out.println("Enter the number of words (or type 'exit' to quit):");
+            userInput = scanner.nextLine();
 
-        for (int i = 0; i < count; i++) {
-            userWords[i] = scanner.nextLine();
+            if (userInput.equalsIgnoreCase("exit")) {
+                break;
+            }
+
+            int count;
+            try {
+                count = Integer.parseInt(userInput);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                continue;
+            }
+
+            String[] userWords = new String[count];
+            System.out.println("Enter " + count + " words:");
+
+            for (int i = 0; i < count; i++) {
+                userWords[i] = scanner.nextLine();
+            }
+
+            String result = corrector.handleData(userWords);
+
+            getOutput(result);
         }
 
-        String result = corrector.handleData(userWords);
-
-        getOutput(result);
-
         scanner.close();
+        System.out.println("Program has exited.");
     }
 
     private static void getOutput(String output) {
