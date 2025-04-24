@@ -2,6 +2,9 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea/
+Word-Corrector/
+g
 
 ### Eclipse ###
 .apt_generated
