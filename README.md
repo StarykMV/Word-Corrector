@@ -14,11 +14,6 @@ A simple Java program that continuously takes words as input, corrects specific 
    ```bash
    git clone https://github.com/StarykMV/Word-Corrector.git
 
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/StarykMV/Word-Corrector.git
-
 2. Open the project in IntelliJ IDEA or your preferred Java IDE.
 
 3. Run the Main.java file to start the application.
